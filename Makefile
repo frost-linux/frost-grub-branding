@@ -1,6 +1,6 @@
 VERSION=0.7
 
-PKG = grub-theme
+PKG = frost-grub-branding
 PREFIX ?= /usr/local
 FMODE = -m0644
 DMODE = -dm0755
@@ -13,10 +13,10 @@ LOCALES = $(wildcard locales/*)
 
 THEME = \
 	$(wildcard artix/*.png) \
-	artix/theme.txt \
-	artix/u_vga16_16.pf2
+	frost/theme.txt \
+	frost/u_vga16_16.pf2
 
-ICONS= $(wildcard artix/icons/*.png)
+ICONS= $(wildcard frost/icons/*.png)
 
 
 install_live_cfg:
@@ -30,11 +30,11 @@ install_live_cfg:
 	install $(FMODE) $(LOCALES) $(DESTDIR)$(PREFIX)/share/grub/locales
 
 install_theme:
-	install $(DMODE) $(DESTDIR)$(PREFIX)/share/grub/themes/artix
-	install $(FMODE) $(THEME) $(DESTDIR)$(PREFIX)/share/grub/themes/artix
+	install $(DMODE) $(DESTDIR)$(PREFIX)/share/grub/themes/frost
+	install $(FMODE) $(THEME) $(DESTDIR)$(PREFIX)/share/grub/themes/frost
 
-	install $(DMODE) $(DESTDIR)$(PREFIX)/share/grub/themes/artix/icons
-	install $(FMODE) $(ICONS) $(DESTDIR)$(PREFIX)/share/grub/themes/artix/icons
+	install $(DMODE) $(DESTDIR)$(PREFIX)/share/grub/themes/frost/icons
+	install $(FMODE) $(ICONS) $(DESTDIR)$(PREFIX)/share/grub/themes/frost/icons
 
 install: install_live_cfg install_theme
 
