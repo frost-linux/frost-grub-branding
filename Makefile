@@ -12,7 +12,7 @@ TZ = $(wildcard tz/*)
 LOCALES = $(wildcard locales/*)
 
 THEME = \
-	$(wildcard artix/*.png) \
+	$(wildcard frost/*.png) \
 	frost/theme.txt \
 	frost/u_vga16_16.pf2
 
